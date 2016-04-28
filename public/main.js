@@ -61,11 +61,14 @@ app.controller("mainController", function ($scope) {
 
     var editingIndex;
 
+    ////work on updating amount after deleting transaction, editing.
+
     $scope.editTransaction = function (transaction) {
         if (transaction.debit) {
-            transaction.amount = transaction.debit;
+            transaction.amount = parseInt(transaction.debit);
         } else {
-            transaction.amount = transaction.credit;
+            transaction.amount = parseInt(transaction.credit);
+
         }
         editingIndex = $scope.transactionList.indexOf(transaction);
         $scope.transactionToEdit = angular.copy(transaction);
@@ -74,10 +77,16 @@ app.controller("mainController", function ($scope) {
 
     $scope.deleteTransaction = function (transaction) {
         var transactionToDelete = $scope.transactionList.indexOf(transaction);
+        if (transaction.credit) {
+            $scope.totalCredit -= transaction.credit;
+        } else {
+            $scope.totalDebit -= transaction.debit;
+        }
         $scope.transactionList.splice(transactionToDelete, 1);
     };
     
     $scope.saveTransactionEdits = function () {
+        $scope.transactionList.splice(editingIndex, 1);
         $scope.transactionList[editingIndex] = $scope.newTransaction;
         $scope.transactionToEdit = null;
     };
@@ -85,6 +94,8 @@ app.controller("mainController", function ($scope) {
     $scope.cancelTransactionEdits = function () {
         $scope.newTransaction = null;
     };
-    
+
+
+
 });
 

@@ -90,7 +90,7 @@
             </div>
         </div>
         <a ng-hide="transactionToEdit" href="#" class="btn btn-raised btn-primary" ng-click="addTransaction()">Add Transaction</a>
-        <a ng-if="transactionToEdit" href="#" class="btn btn-raised btn-sm btn-success" ng-click="saveTransactionEdits()">Save Edits</a>
+        <a ng-if="transactionToEdit" href="#" class="btn btn-raised btn-sm btn-success" ng-click="saveTransactionEdits(transaction)">Save Edits</a>
         <a ng-if="transactionToEdit" href="#" class="btn btn-raised btn-sm btn-warning" ng-click="cancelTransactionEdits()">Cancel Edits</a>
 
     </div>
