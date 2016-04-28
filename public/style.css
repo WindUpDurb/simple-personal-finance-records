@@ -5,3 +5,13 @@ body {
 #searchDiv {
     width : 48%;
 }
+
+#totalCredits {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#totalDebits {
+    display: inline-block;
+    margin-left: 5px;
+}
