@@ -1,3 +1,7 @@
 body {
     text-align: center;
 }
+
+#searchDiv {
+    width : 48%;
+}
