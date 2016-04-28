@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall" : "bower i"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.5",
-    "bootstrap-material-design": "^4.0.1"
+    "bootstrap-material-design": "^4.0.1",
+    "bower": "^1.7.9"
   }
 }
